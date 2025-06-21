@@ -1,0 +1,170 @@
+:root {
+    --primary-color: #6d28d9; /* Cosmic purple */
+    --secondary-color: #1e40af; /* Deep space blue */
+    --accent-color: #d946ef; /* Nebula pink */
+    --text-color: #e5e7eb; /* Starlight */
+    --dark-bg: #0f172a; /* Void black */
+    --highlight: #f59e0b; /* Treasure gold */
+}
+
+body {
+    font-family: 'Orbitron', 'Arial', sans-serif;
+    color: var(--text-color);
+    background-color: var(--dark-bg);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(109, 40, 217, 0.15) 0%, transparent 20%),
+        radial-gradient(circle at 90% 30%, rgba(30, 64, 175, 0.15) 0%, transparent 20%),
+        radial-gradient(circle at 50% 80%, rgba(217, 70, 239, 0.15) 0%, transparent 20%);
+}
+
+.hero {
+    background: 
+        linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 64, 175, 0.8) 100%),
+        url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+    background-size: cover;
+    border-bottom: 2px solid var(--highlight);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(214, 46, 239, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--highlight);
+    color: var(--highlight);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.btn-secondary:hover {
+    background-color: var(--highlight);
+    color: var(--dark-bg);
+    transform: translateY(-2px);
+}
+
+.feature-card {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(109, 40, 217, 0.3);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px -5px rgba(214, 46, 239, 0.2);
+}
+
+/* Mini-game styles */
+#game-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--highlight);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 100;
+}
+
+#pirate {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('https://example.com/pirate-icon.png'); /* Replace with a pirate icon URL */
+    background-size: cover;
+    cursor: pointer;
+}
+
+#score {
+    color: var(--highlight);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#start-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close-button {
+    background-color: transparent;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* XB Logo Styles */
+.xb-logo {
+    position: relative;
+    z-index: 2;
+    transform: rotate(-10deg);
+}
+
+.letter {
+    position: relative;
+    display: inline-block;
+    font-size: 3rem; /* Reduced size */
+    font-weight: 900;
+    color: transparent; /* Make the text transparent */
+    -webkit-text-stroke: 1.5px #41a6ff; /* Stroke for the outline */
+    text-transform: uppercase;
+    animation: float 4s ease-in-out infinite;
+}
+
+.letter.x {
+    animation-delay: 0s;
+}
+
+.letter.b {
+    animation-delay: 0.2s;
+}
+
+.letter::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #41a6ff; /* Solid blue color */
+    overflow: hidden;
+    width: 0; /* Start with width 0 for the filling effect */
+    animation: fill 4s linear infinite; /* Animation for filling effect */
+    filter: drop-shadow(0 0 15px #41a6ff) drop-shadow(0 0 50px #41a6ff); /* Keep the glow effect */
+}
+
+@keyframes fill {
+    0% { width: 0; } /* Start with no fill */
+    70% { width: 100%; } /* Fill to full width */
+    100% { width: 0; } /* Reset for the next cycle */
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XB Pirates - Space Pirate Crew</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Starfield Background -->
+    <div class="starfield" id="starfield"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg shadow-md sticky top-0 z-50 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo Container -->
+                <div class="flex items-center">
+                    <div class="logo-container">
+                        <div class="xb-logo">
+                            <span class="letter x" data-text="X">X</span>
+                            <span class="letter b" data-text="B">B</span>
+                        </div>
+                        <div class="pirate-symbol"></div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center mx-auto">
+                    <a href="#home" class="text-gray-300 hover:text-white nav-link">Command Deck</a>
+                    <a href="#features" class="text-gray-300 hover:text-white nav-link">Ship Systems</a>
+                    <a href="#crew" class="text-gray-300 hover:text-white nav-link">Crew</a>
+                    <a href="#plunder" class="text-gray-300 hover:text-white nav-link">Plunder</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white nav-link">Transmissions</a>
+                    <a href="#signup" class="px-4 py-2 rounded-md font-medium btn-primary">Join the Crew</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-white py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">PLUNDER THE GALAXY <span class="text-yellow-300">WITH XB</span></h1>
+                    <p class="text-xl mb-8 opacity-90">Join the most feared space pirate crew in the Orion Arm. We offer the best loot, the fastest ships, and the most dangerous adventures across the cosmos.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#signup" class="px-6 py-3 rounded-md font-medium btn-primary text-center">Enlist Now</a>
+                        <a href="#features" class="px-6 py-3 rounded-md font-medium btn-secondary text-center">View Our Fleet</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Space Pirate Ship" class="rounded-lg shadow-2xl w-full max-w-md mx-auto floating border-2 border-purple-500">
+                    <div class="absolute -bottom-5 -right-5 bg-purple-600 rounded-full w-24 h-24 z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section - Ship Systems -->
+    <section id="features" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">XB <span class="text-purple-400">SHIP SYSTEMS</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">The most advanced pirate technology this side of the Milky Way</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-lg feature-card">
+                    <h3 class="text-xl font-semibold mb-3 text-white">Quantum Engines</h3>
+                    <p class="text-gray-400">Our proprietary quantum distortion drives allow for faster-than-light travel without alerting the Galactic Patrol.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-lg feature-card">
+                    <h3 class="text-xl font-semibold mb-3 text-white">Stealth Technology</h3>
+                    <p class="text-gray-400">Our ships are equipped with the latest cloaking devices, making them nearly invisible to enemy scanners.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-lg feature-card">
+                    <h3 class="text-xl font-semibold mb-3 text-white">Advanced Weaponry</h3>
+                    <p class="text-gray-400">Our ships are armed with the most powerful laser cannons and missile systems in the galaxy.</p>
+                    <button id="start-game" class="mt-4 px-4 py-2 rounded-md font-medium btn-primary">Play Mini-Game</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mini-Game Section -->
+    <div id="game-container">
+        <button id="close-button" class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full">✖</button>
+        <div id="score">Score: 0</div>
+        <div id="pirate"></div>
+        <button id="start-button" class="mt-4 px-4 py-2 rounded-md font-medium btn-primary">Start Game</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-400">© 2023 XB Pirates. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
